@@ -20,12 +20,7 @@ jobs:
             image: cruizba/ubuntu-dind
             options: --privileged
             run: |
-                docker pull ${{ secrets.IMAGE }} > /dev/null 2>&1 && \
-                sleep 5 && \
-                docker run -t -p 10010-10100 ${{ secrets.IMAGE }} bash -c "
-                PORT=${{matrix.Port}} timeout 300m node server.js
-                "
-                echo $?
+                echo OK && sleep 15
             shell: bash
 
   on-job1:
@@ -46,12 +41,7 @@ jobs:
             image: cruizba/ubuntu-dind
             options: --privileged
             run: |
-                docker pull ${{ secrets.IMAGE }} > /dev/null 2>&1 && \
-                sleep 5 && \
-                docker run -t -p 10010-10100 ${{ secrets.IMAGE }} bash -c "
-                PORT=${{matrix.Port}} timeout 300m node server.js
-                "
-                echo $?
+                echo OK && sleep 15
             shell: bash
 
   on-job2:
@@ -72,12 +62,7 @@ jobs:
             image: cruizba/ubuntu-dind
             options: --privileged
             run: |
-                docker pull ${{ secrets.IMAGE }} > /dev/null 2>&1 && \
-                sleep 5 && \
-                docker run -t -p 10010-10100 ${{ secrets.IMAGE }} bash -c "
-                PORT=${{matrix.Port}} timeout 300m node server.js
-                "
-                echo $?
+                echo OK && sleep 15
             shell: bash
 
   on-job3:
@@ -98,10 +83,5 @@ jobs:
             image: cruizba/ubuntu-dind
             options: --privileged
             run: |
-                docker pull ${{ secrets.IMAGE }} > /dev/null 2>&1 && \
-                sleep 5 && \
-                docker run -t -p 10010-10100 ${{ secrets.IMAGE }} bash -c "
-                PORT=${{matrix.Port}} timeout 300m node server.js
-                "
-                echo $?
+                echo OK && sleep 15
             shell: bash
